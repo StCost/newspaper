@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Debugging</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="node_modules/flip-book/css/font-awesome.min.css">
+
+      <style type="text/css">
+          body {
+              background-color: #333;
+              margin: 0;
+              padding: 0;
+          }
+          .container {
+              height: 95vh;
+              width: 95%;
+          }
+          .fullscreen {
+              background-color: #333;
+          }
+          .changer {
+              top: 0;
+              left: 0;
+              display: flex;
+              position: absolute;
+              height: 32px;
+              width: 96px;
+          }
+          .index-changer,.index {
+              width: 32px;
+              height: 32px;
+              background: white;
+              text-align: center;
+              line-height: 32px;
+          }
+      </style>
+  </head>
+  <body>
+    <div class="container" id="container">
+    </div>
+
+    <script src="node_modules/flip-book/js/jquery.min.js"></script>
+    <script src="node_modules/flip-book/js/html2canvas.min.js"></script>
+    <script src="node_modules/flip-book/js/three.min.js"></script>
+    <script src="node_modules/flip-book/js/pdf.min.js"></script>
+
+    <script src="bundle.js"></script>
+  </body>
+</html>
