@@ -7,7 +7,7 @@
     "start": "npm run dev",
     "dev": "webpack-dev-server --env.debug --port 8080 --inline --hot",
     "build-debug": "webpack --env.debug",
-    "build-production": "webpack --display-modules",
+    "build": "webpack --display-modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
