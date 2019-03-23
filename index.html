@@ -4,29 +4,39 @@
     <title>Debugging</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="node_modules/flip-book/css/font-awesome.min.css">
+
+      <style type="text/css">
+          body {
+              background-color: #333;
+              margin: 0;
+              padding: 0;
+          }
+          .container {
+              height: 95vh;
+              width: 95%;
+          }
+          .fullscreen {
+              background-color: #333;
+          }
+          .changer {
+              top: 0;
+              left: 0;
+              display: flex;
+              position: absolute;
+              height: 32px;
+              width: 96px;
+          }
+          .index-changer,.index {
+              width: 32px;
+              height: 32px;
+              background: white;
+              text-align: center;
+              line-height: 32px;
+          }
+      </style>
   </head>
   <body>
-
-    <style type="text/css">
-      body {
-        background-color: #333;
-        margin: 0;
-        padding: 0;
-      }
-      .container {
-        height: 95vh;
-        width: 95%;
-        margin: 20px auto;
-        border: 2px solid red;
-        box-shadow: 0 0 5px red;
-      }
-      .fullscreen {
-        background-color: #333;
-      }
-    </style>
-
     <div class="container" id="container">
-
     </div>
 
     <script src="node_modules/flip-book/js/jquery.min.js"></script>

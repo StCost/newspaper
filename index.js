@@ -5,154 +5,60 @@ window.PDFJS_LOCALE = {
 };
 require('flip-book');
 
+import books from './src/config';
+let bookIndex = books.length - 1;
+const setPage = () => {
+  const index = parseInt(new URL(window.location.href).searchParams.get('page'));
+  if (!isNaN(index)) {
+    bookIndex = index;
+  }
+};
+setPage();
+console.log(bookIndex, books[bookIndex], books)
+const changeBookIndex = (change = 0) => {
+  bookIndex += change;
+  if (bookIndex < 0) {
+    bookIndex = books.length - 1;
+  } else if (bookIndex > books.length - 1) {
+    bookIndex = 0;
+  }
+  window.location.replace('?page=' + bookIndex)
+};
 
-// // Sample 0 {
-// $('#container').FlipBook({
-//   pdf: 'books/pdf/FoxitPdfSdk.pdf',
-//   template: {
-//     html: 'node_modules/flip-book/templates/default-book-view.html',
-//     links: [
-//       {
-//         rel: 'stylesheet',
-//         href: 'node_modules/flip-book/css/font-awesome.min.css'
-//       }
-//     ],
-//     styles: [
-//       'node_modules/flip-book/css/short-black-book-view.css'
-//     ],
-//     links: [{
-//       rel: 'stylesheet',
-//       href: 'node_modules/flip-book/css/font-awesome.min.css'
-//     }],
-//     script: 'node_modules/flip-book/js/default-book-view.js'
-//   }
-// });
-// // }
-//
-// Sample 1 {
-function theKingIsBlackPageCallback(n) {
-  return {
-    type: 'image',
-    src: 'books/image/theKingIsBlack/'+(n+1)+'.jpg',
-    interactive: false
-  };
-}
+const body = document.body;
+const wrapper = document.createElement('div');
+wrapper.classList.add('changer');
+body.appendChild(wrapper);
+
+const leftB = document.createElement('button');
+leftB.classList.add('index-changer');
+leftB.innerHTML = '<';
+wrapper.appendChild(leftB);
+leftB.onclick = () => changeBookIndex(-1);
+
+const index = document.createElement('div');
+wrapper.appendChild(index);
+index.classList.add('index');
+index.innerHTML = '' + (bookIndex + 1);
+
+const rightB = document.createElement('button');
+rightB.classList.add('index-changer');
+rightB.innerHTML = '>';
+rightB.onclick = () => changeBookIndex(1);
+wrapper.appendChild(rightB);
 
 $('#container').FlipBook({
-  pageCallback: theKingIsBlackPageCallback,
-  pages: 10,
-  propertiesCallback: function(props) {
-    props.cover.color = 0x000000;
-    return props;
-  },
+  pdf: `books/${books[bookIndex]}.pdf`,
   template: {
     html: 'node_modules/flip-book/templates/default-book-view.html',
-    links: [
-      {
-        rel: 'stylesheet',
-        href: 'node_modules/flip-book/css/font-awesome.min.css'
-      }
-    ],
     styles: [
-      'node_modules/flip-book/css/short-white-book-view.css'
+      'node_modules/flip-book/css/short-black-book-view.css'
     ],
     links: [{
       rel: 'stylesheet',
       href: 'node_modules/flip-book/css/font-awesome.min.css'
     }],
-    script: 'node_modules/flip-book/js/default-book-view.js',
-    sounds: {
-      startFlip: 'node_modules/flip-book/sounds/start-flip.mp3',
-      endFlip: 'node_modules/flip-book/sounds/end-flip.mp3'
-    }
+    script: 'node_modules/flip-book/js/default-book-view.js'
   }
 });
-// }
-//
-// // Sample 2 {
-// $('#container').FlipBook({
-//   pdf: 'books/pdf/CondoLiving.pdf',
-//   template: {
-//     html: 'node_modules/flip-book/templates/default-book-view.html',
-//     links: [
-//       {
-//         rel: 'stylesheet',
-//         href: 'node_modules/flip-book/css/font-awesome.min.css'
-//       }
-//     ],
-//     styles: [
-//       'node_modules/flip-book/css/white-book-view.css'
-//     ],
-//     links: [{
-//       rel: 'stylesheet',
-//       href: 'node_modules/flip-book/css/font-awesome.min.css'
-//     }],
-//     script: 'node_modules/flip-book/js/default-book-view.js'
-//   }
-// });
-// // }
-//
-// // Sample 3 {
-// $('#container').FlipBook({
-//   pdf: 'books/pdf/TheThreeMusketeers.pdf',
-//   propertiesCallback: function(props) {
-//     props.page.depth /= 2.5;
-//     props.cover.padding = 0.002;
-//     return props;
-//   },
-//   template: {
-//     html: 'node_modules/flip-book/templates/default-book-view.html',
-//     links: [
-//       {
-//         rel: 'stylesheet',
-//         href: 'node_modules/flip-book/css/font-awesome.min.css'
-//       }
-//     ],
-//     styles: [
-//       'node_modules/flip-book/css/short-black-book-view.css'
-//     ],
-//     links: [{
-//       rel: 'stylesheet',
-//       href: 'node_modules/flip-book/css/font-awesome.min.css'
-//     }],
-//     script: 'node_modules/flip-book/js/default-book-view.js'
-//   }
-// });
-// // }
-//
-// // Sample 4 {
-// function preview(n) {
-//   return {
-//     type: 'html',
-//     src: 'books/html/preview/'+(n%3+1)+'.html',
-//     interactive: true
-//   };
-// }
-//
-// $('#container').FlipBook({
-//   pageCallback: preview,
-//   pages: 10,
-//   propertiesCallback: function(props) {
-//     props.sheet.color = 0x008080;
-//     props.cover.padding = 0.002;
-//     return props;
-//   },
-//   template: {
-//     html: 'node_modules/flip-book/templates/default-book-view.html',
-//     links: [
-//       {
-//         rel: 'stylesheet',
-//         href: 'node_modules/flip-book/css/font-awesome.min.css'
-//       }
-//     ],
-//     styles: [
-//       'node_modules/flip-book/css/black-book-view.css'
-//     ],
-//     links: [{
-//       rel: 'stylesheet',
-//       href: 'node_modules/flip-book/css/font-awesome.min.css'
-//     }],
-//     script: 'node_modules/flip-book/js/default-book-view.js'
-//   }
-// });
-// // }
+
