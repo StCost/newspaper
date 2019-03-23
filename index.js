@@ -1,7 +1,7 @@
 import {$} from './src/libs'
 
 window.PDFJS_LOCALE = {
-  pdfJsWorker: 'node_modules/flip-book/js/pdf.worker.js'
+  pdfJsWorker: 'https://cdn.jsdelivr.net/npm/flip-book@1.9.7/js/pdf.worker.js'
 };
 require('flip-book');
 
@@ -50,15 +50,15 @@ wrapper.appendChild(rightB);
 $('#container').FlipBook({
   pdf: `books/${books[bookIndex]}.pdf`,
   template: {
-    html: 'node_modules/flip-book/templates/default-book-view.html',
+    html: 'https://cdn.jsdelivr.net/npm/flip-book@1.9.7/templates/default-book-view.html',
     styles: [
-      'node_modules/flip-book/css/short-black-book-view.css'
+      'https://cdn.jsdelivr.net/npm/flip-book@1.9.7/css/short-black-book-view.css'
     ],
     links: [{
       rel: 'stylesheet',
-      href: 'node_modules/flip-book/css/font-awesome.min.css'
+      href: 'https://cdn.jsdelivr.net/npm/flip-book@1.9.7/css/font-awesome.min.css'
     }],
-    script: 'node_modules/flip-book/js/default-book-view.js'
+    script: 'https://cdn.jsdelivr.net/npm/flip-book@1.9.7/js/default-book-view.js'
   }
 });
 
