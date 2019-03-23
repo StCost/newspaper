@@ -96,8 +96,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="855" />
-    <option name="y" value="-15" />
+    <option name="x" value="1989" />
+    <option name="y" value="172" />
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
@@ -168,15 +168,15 @@
       <option name="presentableId" value="Default" />
       <updated>1553198838037</updated>
       <workItem from="1553198840531" duration="1074000" />
-      <workItem from="1553352635474" duration="3623000" />
+      <workItem from="1553352635474" duration="3954000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4697000" />
+    <option name="totallyTimeSpent" value="5028000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="172" width="1616" height="916" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" />
@@ -185,8 +185,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32925472" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21690768" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2529412" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.256917" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3051613" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
