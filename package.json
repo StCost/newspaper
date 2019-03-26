@@ -9,7 +9,7 @@
     "build-debug": "webpack --env.debug",
     "build": "webpack --display-modules",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "push": "npm run build && copy \"bundle.js\" \"%cd%/docs/bundle.js\" && git add . && git commit -m \"commmit\" && git push origin master"
+    "push": "git fetch --all && git pull origin master && npm run build && copy \"bundle.js\" \"%cd%/docs/bundle.js\" && git add . && git commit -m \"commmit\" && git push origin master"
   },
   "repository": {
     "type": "git",
