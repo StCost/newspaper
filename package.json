@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server --env.debug --port 8080 --inline --hot",
     "build-debug": "webpack --env.debug",
     "build": "webpack --display-modules",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "npm run build && copy \"bundle.js\" \"%cd%/docs/bundle.js\" && git add . && git commit -m \"commmit\" && git push origin master"
   },
   "repository": {
     "type": "git",
