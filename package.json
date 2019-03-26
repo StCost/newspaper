@@ -50,5 +50,8 @@
   "bugs": {
     "url": "https://github.com/iberezansky/flip-book-jquery-example/issues"
   },
-  "homepage": "https://github.com/iberezansky/flip-book-jquery-example#readme"
+  "homepage": "https://github.com/iberezansky/flip-book-jquery-example#readme",
+  "devDependencies": {
+    "webpack-cli": "^3.3.0"
+  }
 }
