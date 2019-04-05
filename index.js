@@ -3,7 +3,7 @@ import {$} from './src/libs'
 window.PDFJS_LOCALE = {
   pdfJsWorker: 'https://cdn.jsdelivr.net/npm/flip-book@1.9.7/js/pdf.worker.js'
 };
-require('flip-book');
+require('./src/flip-book');
 
 import books from './src/config';
 let bookIndex = books.length - 1;
@@ -14,7 +14,7 @@ const setPage = () => {
   }
 };
 setPage();
-console.log(bookIndex, books[bookIndex], books)
+
 const changeBookIndex = (change = 0) => {
   bookIndex += change;
   if (bookIndex < 0) {
