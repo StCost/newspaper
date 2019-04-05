@@ -19,12 +19,26 @@
               background-color: #333;
           }
           .changer {
-              top: 0;
-              left: 0;
               display: flex;
               position: absolute;
               height: 32px;
               width: 96px;
+              top: 95%;
+              left: -3.5%;
+              margin-left: auto;
+              margin-right: auto;
+              right: 0;
+              opacity: 0.3;
+              transition-duration: 1s;
+          }
+          .changer:hover {
+              opacity: 1;
+          }
+          .index-changer:first-child {
+              border-radius: 8px 0 0 8px;
+          }
+          .index-changer:last-child {
+              border-radius: 0 8px 8px 0;
           }
           .index-changer,.index {
               width: 32px;
