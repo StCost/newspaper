@@ -3,5 +3,5 @@ export default [
   'FoxitPdfSdk',
   'TheThreeMusketeers',
   'first',
-  'gk',
+  'gk2',
 ];
